@@ -9,11 +9,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!--link rel="stylesheet" href="lib/fontsawesome_v5.0.13.css" />
+  <link rel="stylesheet" href="lib/bootstrap.min.css" />
+  <script src="lib/jquery-3.1.1.min.js"></script>
+  <script src="lib/popper.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script-->
+
+  <script type="text/javascript" src="lib/jssor.slider.min.js"></script>
+  <script src="lib/slider_script.js"></script>
+  <link rel="stylesheet" href="style/slider_style.css"/>
+  <link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="contact.php"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
+    </li>    
     <li class="nav-item active">
       <a class="nav-link" href="account/register.php"><i class="fa fa-sign-in-alt"></i>&nbsp;Register</a>
     </li>
@@ -24,6 +41,86 @@
 </nav>
 
 
+<div style="min-height: 50px;">
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 360px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="svg/loading/static-svg/spin.svg" />
+            </div>
+            <!-- Slides Container -->            	
+                <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                    <div class="slider_img">
+                    	<img data-u="image" src="img/1.jpg" />
+                   </div>
+        	        <div class="slider_img">
+                    	<img data-u="image" src="img/2.jpg" />
+    	            </div>
+    	            <div class="slider_img">
+                    	<img data-u="image" src="img/3.jpg" />
+                    </div>
+	            </div>
+  
+            <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+        
+            
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+            <!--#endregion Arrow Navigator Skin End -->
+        </div>
+        </div>
+        <!-- Jssor Slider End -->    
+        
+        <div class="container-fluid">
+  <section class="row">
+   	<div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+   	<div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
+   		<h6 class="font-huge main">Welcome!</h6>
+   		<p class="font-normal text">The basic idea is, the player controls a robots, which runs from left to right like in the old mario bros.
+games. Main-target-group are mobile gamers. By clicking of the top-, left-, right-, bottom- part of the
+device, the player can make his robot run faster, slower, make it jump or doing a barrel roll. While
+running with his robot throught the level he must dodge elements, objects and traps.</p>
+   		<h6 class="font-big main">New Features</h6>
+   		<p class="font-normal text">
+   			The basic idea is, the player controls a robots, which runs from left to right like in the old mario bros.
+games. Main-target-group are mobile gamers. By clicking of the top-, left-, right-, bottom- part of the
+device, the player can make his robot run faster, slower, make it jump or doing a barrel roll. While
+running with his robot throught the level he must dodge elements, objects and traps.</p>
+   		<h6 class="font-big main">Change Log</h6>
+   		<p class="font-normal text">
+   			The basic idea is, the player controls a robots, which runs from left to right like in the old mario bros.
+games. Main-target-group are mobile gamers. By clicking of the top-, left-, right-, bottom- part of the
+device, the player can make his robot run faster, slower, make it jump or doing a barrel roll. While
+running with his robot throught the level he must dodge elements, objects and traps.
+   		</p>
+   	</div>
+	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 shop_teaser">
+		<h6 class="font-huge main">Shop Teaser</h6>
+   		
+   			<ul>
+   				<li class="font-big secondary">Coming Soon</li>
+   				<img src="img/shop.jpeg" style="max-width: 100%"/>
+   			</ul>
+   		
+	</div>
+
+  </section>
+</div>
 
 </body>
 </html>

@@ -1,58 +1,38 @@
 body{
-	background-color: white;
+	background-color:#EFEFEF;
+/*	background-image: url('../images/bg.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;*/
 }
-#topbar{
-	background-color:black;
-	color: white;
-	padding: 5px;
-	margin-bottom: 10px;
+.input_form{
+	display:inline;
+	width:60%;
 }
-.box{
-	border:2px outset black;
-	border-radius: 15px;
-	background-color: white;
-	padding: 25px;
-}
-#heading{
+
+.center{
 	text-align: center;
 }
-strong{
-	color:#9900FF;
-}
-/*Register.php*/
-#pwd_msg{
-	float:right;
+.inline_me{
+	display:inline;
 }
 
-#frgtpwd{
-	float: right;
-	color: grey;
-}
 
-/*Tooltip for password*/
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
+.main{ color: #9900FF;}
+.secondary{ color: #33EE33;}
+.text{ color: #333333;}
+.text-alternative{ color: #CCCCCC;}
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 100%;
-    background-color: #f1f1f1;
-    color: black;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px 0;
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-	/*Display on Top*/
-    bottom: 100%;
-    left: 50%; 
-    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-}
+.font-tiny{font-size: 10px;}
+.font-small{font-size: 12px;margin:5px;}
+.font-normal{font-size: 14px;margin:10px;}
+.font-big{font-size: 20px;margin:20px;}
+.font-huge{font-size: 30px;margin:50px;}
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+.shop_teaser{
+	border-left:2px solid #CCCCCC;
+	border-bottom:2px solid #CCCCCC;
+	border-radius:20%;
 }
