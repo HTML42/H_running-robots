@@ -44,6 +44,12 @@ if($_SERVER["REQUEST_METHOD"]== "POST")
       <a class="nav-link" href="contact.php"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
     </li>
     <li class="nav-item active">
+      <a class="nav-link" href="levels.html"><i class="fa fa-level-up-alt"></i>&nbsp;Levels</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="garage.html"><i class="fa fa-robot"></i>&nbsp;Garage</a>
+    </li>
+    <li class="nav-item active">
       <a class="nav-link" href="account/register.php"><i class="fa fa-sign-in-alt"></i>&nbsp;Register</a>
     </li>
     <li class="nav-item active">
