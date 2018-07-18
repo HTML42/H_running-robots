@@ -86,6 +86,28 @@ if($_SERVER["REQUEST_METHOD"]== "POST")
 
   </section>
 </div>
-
+<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Running Robots</h5>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="contact.php"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+						<li><a href="shop.html"><i class="fa fa-angle-double-right"></i>Shop</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="imprint.html"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="privacy.html"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--Footer End-->
 </body>
 </html>
