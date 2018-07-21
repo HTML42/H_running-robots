@@ -30,18 +30,18 @@ set_error_handler("var_dump");
 					//Send email for password reset
 					
 					//Email text
-					$msg="Hello\n\nA password reset was requested for your Running Robot account.\n";
+					//$msg="Hello\n\nA password reset was requested for your Running Robot account.\n";
 
-					 /*
-					Please use this link to reset your password http://localhost/p_site/H_running-robots/account/resetpwd.php?=".$code."\n
+					 
+					$msg="Hello\n\nPlease use this link to reset your password http://localhost/p_site/H_running-robots/account/resetpwd.php?=".$code."\n
 					If you didn't requested password reset link then ignore this email, this link will automatically become invalid after 1 hour.\n
 					\n
-					Best Wishes and Regards\n
-					Pak Travel"; */
+					Best Wishes and Regards\n";
+					
 					$msg = wordwrap($msg,70);
 					// send email
-					//mail($email,"Running Robot - Password Reset Link",$msg);
-					 console.log($msg);
+					mail($email,"Running Robot - Password Reset Link",$msg);
+					// console.log($msg);
 					 //echo "<script>alert('A link has been sent to your email address for reseting your password. If link is not in Inbox then check your spam folder, Thank you')</script>";
 				}
 				else {
@@ -51,13 +51,13 @@ set_error_handler("var_dump");
 			break;		
 			case "login":
 			
-				$email="abc@mail.com";
-				$password="qwe";
+				$email="ab123@mail.com";
+				$password="Abcd1234";
 				
 				//$email=$_POST['username'];
 				//$password=$_POST['password'];
 		
-				$stmt = $link->prepare("select cid,password from Login where email=?");
+				$stmt = $link->prepare("select id,password from Login where email=?");
 				$stmt->bind_param('s', $email);
 				$stmt->execute();		
 				$stmt->store_result();
@@ -69,10 +69,10 @@ set_error_handler("var_dump");
 					if (password_verify($password, $hash))//verify if password is correct 
 					{
 						echo $password."--".$hash;
-print_r($stmt->error_list);				
+//print_r($stmt->error_list);				
 						$_SESSION['login_user']=$email;
 						$_SESSION['cdid']=$cdid;
-						header("Location: ../model/dashboard.php");
+						header("Location: ../dashboard.php");
 					}//inner if end 
 					else {
 			    		echo 'Password verification failed';
@@ -91,9 +91,10 @@ print_r($stmt->error_list);
 	<title>Running Robot</title>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../style/style.css">
         <script>
     		function CheckPass()
@@ -129,6 +130,11 @@ print_r($stmt->error_list);
     	</script>
 </head>
 	<body onload="HideForgotPwd()">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    	<a class="navbar-brand logo" href="../index.html" ><strong>R-R</strong></a>
+    </nav>
+	<br /><br /><br /><br />
+<!--BODY ------------------------------->
 		<div class="container-fluid">
 	        
 			<!--Login Section-->
@@ -141,19 +147,17 @@ print_r($stmt->error_list);
    						<!--Email-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-envelope' style='color:green'></span></div>
-						    	<input class="form-control" type="text" name="username" placeholder="Email address"/>
+    							<input class="form-control" type="text" name="username" placeholder="Email address"/>
   							</div>
 						</div>
 						<!--Password-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-lock' style='color:green'></span></div>
-						    	<input class="form-control" type="password" name="password" placeholder="Password"/>
+    							<input class="form-control" type="password" name="password" placeholder="Password"/>
   							</div>
 						</div>
 						<input type="hidden" name="action" value="login">
-						<input type="submit" class="btn btn-success" value="Login"/><br />			
+						<input type="submit" class="btn btn-default font-normal" value="Login" style="background-color:#33EE33;color:#9900FF;font-weight: bolder;"/><br />			
 					</form>				
 					<hr />
 					<a href="register.php">Create Account</a> 
@@ -177,7 +181,7 @@ print_r($stmt->error_list);
 						</div>
 						<label id="pwd_msg"></label>
 						<input type="hidden" name="action" value="resetpass"><br />
-						<input type="submit" class="btn btn-success" value="Email Password Reset Link"/><br />			
+						<input type="submit" class="btn btn-default font-normal" value="Email Password Reset Link" style="background-color:#33EE33;color:#9900FF;font-weight: bolder;"/><br />			
 					</form>		
 					<hr />
 					<label id="frgtpwd" onclick="ShowLogin()">Login</label>		
@@ -185,4 +189,28 @@ print_r($stmt->error_list);
 				<div class="col-xs-0 col-sm-2 col-md-4 col-lg-4"></div>
   			</section>
 		</div>
+		<br /><br /><br /><br />
+		<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Running Robots</h5>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="contact.php"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+						<li><a href="shop.html"><i class="fa fa-angle-double-right"></i>Shop</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="imprint.html"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="privacy.html"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--Footer End-->
 	</body>

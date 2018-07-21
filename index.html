@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
   <!--link rel="stylesheet" href="lib/fontsawesome_v5.0.13.css" />
   <link rel="stylesheet" href="lib/bootstrap.min.css" />
@@ -20,32 +20,52 @@
   <script src="lib/slider_script.js"></script>
   <link rel="stylesheet" href="style/slider_style.css"/>
   <link rel="stylesheet" href="style/style.css" />
+  
+  <script>
+  	$.getJSON("model/Getdata_Player.php",function(result){
+		var result=result['info'];
+		var id= result[0]['id'];
+		
+		if(id==-1)
+		{
+			$("#dashboard").hide();
+		}
+		else
+		{
+			$("#register").hide();
+			$("#login").hide();	
+		}
+		
+	}).done(function(d){
+		//alert("sucess");
+	}).fail(function(d,textStatus,error){
+		//alert("getJSON failed, status:"+textStatus+", error: "+error)
+	}).always(function(d){
+		//alert("complete");
+	});
+  </script>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="contact.php"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="levels.html"><i class="fa fa-level-up-alt"></i>&nbsp;Levels</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="garage.html"><i class="fa fa-robot"></i>&nbsp;Garage</a>
-    </li>    
-    <li class="nav-item active">
-      <a class="nav-link" href="account/register.php"><i class="fa fa-sign-in-alt"></i>&nbsp;Register</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="account/login.php"><i class="fa fa-user"></i>&nbsp;Login</a>
-    </li>
-  </ul>
-</nav>
-
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    	<a class="navbar-brand logo" href="index.html" ><strong>R-R</strong></a>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+            	<li class="nav-item active">
+      				<a class="nav-link" href="shop.html"><i class="fa fa-shopping-bag"></i>&nbsp;Shop</a>
+			    </li>
+                <li class="nav-item active" id="register">
+                    <a class="nav-link" href="account/register.php"><i class="fa fa-user"></i>&nbsp;Register</a>
+                </li>
+                <li class="nav-item active" id="login">
+                    <a class="nav-link" href="account/login.php"><i class="fa fa-sign-in-alt"></i>&nbsp;Login</a>
+                </li>
+                <li class="nav-item active" id="dashboard">
+    				<a class="nav-link" href="dashboard.php"><i class="fa fa-object-group"></i>&nbsp;Dashboard</a>
+    			</li>
+            </ul>
+        </div>
+	</nav>
 
 <div style="min-height: 50px;">
         <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;

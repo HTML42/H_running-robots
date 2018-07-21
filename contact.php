@@ -35,27 +35,10 @@ if($_SERVER["REQUEST_METHOD"]== "POST")
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="contact.php"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="levels.html"><i class="fa fa-level-up-alt"></i>&nbsp;Levels</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="garage.html"><i class="fa fa-robot"></i>&nbsp;Garage</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="account/register.php"><i class="fa fa-sign-in-alt"></i>&nbsp;Register</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="account/login.php"><i class="fa fa-user"></i>&nbsp;Login</a>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+	<a class="navbar-brand logo" href="index.html" ><strong>R-R</strong></a>
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+    </div>
 </nav>
 
 <div class="container-fluid">

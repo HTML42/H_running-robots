@@ -1,5 +1,5 @@
 <?php
-include '../model/db_con.php';
+include '../model/dbcon.php';
 	session_start();
 include("../lib/simple-php-captcha.php");
 $_SESSION['captcha'] = simple_php_captcha();
@@ -54,9 +54,9 @@ $_SESSION['captcha'] = simple_php_captcha();
 				if($stmt->execute())
 				{
 					$_SESSION['error'] = "Account successfully created";
-					//header("Location: login.php");
-				}
-			}	
+					header("Location: ../dashboard.html");
+				}//if end 
+			}//if end	
 		}//inner if end
 		else {
 			header("Location: register.php");
@@ -76,9 +76,10 @@ $_SESSION['captcha'] = simple_php_captcha();
 		<title>Running Robot - Register</title>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
     	<link rel="stylesheet" href="../style/style.css">
     	<script>
@@ -100,7 +101,11 @@ $_SESSION['captcha'] = simple_php_captcha();
     	</script>
     </head>
     <body>
-    	
+    	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    		<a class="navbar-brand logo" href="../index.html" ><strong>R-R</strong></a>
+    	    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+    	    </div>
+		</nav>
     	<!--div class="tooltip"> Hover
 			<span class="tooltiptext">
 				Password must have: 
@@ -110,7 +115,7 @@ $_SESSION['captcha'] = simple_php_captcha();
 				4-&nbsp;8 Length <br />
 			</span>
 		</div-->
-		
+	<br /><br /><br /><br />	
 		<div class="container-fluid">
 	        <!--Top Row-->
 					
@@ -124,23 +129,20 @@ $_SESSION['captcha'] = simple_php_captcha();
 						<!--Email-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-envelope' style='color:green'></span></div>
-						    	<input class="form-control" type="text" name="email" value="ab123@mail.com" placeholder="Email address"/>
+    							<input class="form-control" type="text" name="email" value="ab123@mail.com" placeholder="Email address"/>
   							</div>
 						</div>
 						<!--Password-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-lock' style='color:green'></span></div>
-						    	<input class="form-control" type="password" name="password" id="newpwd" value="123" onchange="CheckPass()" placeholder="Password"/>
+    							<input class="form-control" type="password" name="password" id="newpwd" value="Abcd1234" onchange="CheckPass()" placeholder="Password"/>
 							</div>
 						</div>
 
 						<!--Retype Password-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-lock' style='color:green'></span></div>
-						    	<input class="form-control" type="password" name="password" id="newpwd_retype" value="123" onchange="CheckPass()" placeholder="Retype Password"/>
+    							<input class="form-control" type="password" name="password" id="newpwd_retype" value="Abcd1234" onchange="CheckPass()" placeholder="Retype Password"/>
 	  						</div>	  						
 						</div>
 						<i>For password use 8 characters or more, having numbers and letters</i><br />
@@ -150,11 +152,10 @@ $_SESSION['captcha'] = simple_php_captcha();
 						<br /><br />
 						<div class="form-group">
 							<div class="input-group">    							
-    							<div class="input-group-addon"><span class='glyphicon glyphicon-pencil' style='color:green'></span></div>
-						    	<input class="form-control" type="text" id="captcha" name="captcha" placeholder="Enter Captcha Here"/>
+    							<input class="form-control" type="text" id="captcha" name="captcha" placeholder="Enter Captcha Here"/>
   							</div>
 						</div>
-						<input type="submit" value="Create Account" class="btn btn-success"/>
+						<input type="submit" value="Create Account" class="btn btn-default font-normal" style="background-color:#33EE33;color:#9900FF;font-weight: bolder;"/>
 					</form>
 						<?php
 							if(isset($_SESSION['error']))
@@ -169,5 +170,29 @@ $_SESSION['captcha'] = simple_php_captcha();
 				<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
   			</section>
 		</div>
+		<br /><br /><br /><br />
+		<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Running Robots</h5>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="contact.php"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+						<li><a href="shop.html"><i class="fa fa-angle-double-right"></i>Shop</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="imprint.html"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="privacy.html"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--Footer End-->
 	</body>
 </html>

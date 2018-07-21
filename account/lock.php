@@ -1,5 +1,5 @@
 <?php 
-include 'dbcon.php';
+include '../model/dbcon.php';
 
 session_start();
 $user_check=$_SESSION['login_user'];
@@ -17,14 +17,14 @@ if($stmt->fetch())
 	if(!isset($login_session))
 	{
 		//echo "Failed\n";
-		header("Location: ../account/login.php");
+		header("Location: account/login.php");
 	}
 	else{
 		//header("Location: dashboard.php");
 	}
 }
 else {//Not loged in
-	header("Location: ../account/login.php");
+	header("Location: account/login.php");
 }
 $stmt->close();
 

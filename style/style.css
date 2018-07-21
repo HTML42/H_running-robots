@@ -160,3 +160,16 @@ section .section-title {
 .shop_box > img:hover {
    width: 52%;
 }
+/*Logo*/
+.logo{
+	background-color:#9900FF;
+	color:#CCCCCC;
+	padding: 5px 10px;
+}
+/**/
+.dashboard_box{
+	border:5px solid #9900FF;
+	border-radius:10px;
+	background-color: white;
+	
+}
