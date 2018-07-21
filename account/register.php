@@ -7,7 +7,7 @@ $_SESSION['captcha'] = simple_php_captcha();
 	if($_SERVER["REQUEST_METHOD"]== "POST")
 	{
 		//echo $captcha.'-'.$_SESSION['captcha']['code'];
-		if(addslashes($_POST['captcha']) == $_SESSION['captcha']['code'] || 1==1)//Add trip if captcha is correct, to protect against bots
+		if(addslashes($_POST['captcha']) == $_SESSION['captcha']['code'])//Add trip if captcha is correct, to protect against bots
 		{
 			if($_POST['email'] == '')
 			{
@@ -129,20 +129,20 @@ $_SESSION['captcha'] = simple_php_captcha();
 						<!--Email-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<input class="form-control" type="text" name="email" value="ab123@mail.com" placeholder="Email address"/>
+    							<input class="form-control" type="text" name="email" value="" placeholder="Email address"/>
   							</div>
 						</div>
 						<!--Password-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<input class="form-control" type="password" name="password" id="newpwd" value="Abcd1234" onchange="CheckPass()" placeholder="Password"/>
+    							<input class="form-control" type="password" name="password" id="newpwd" value="" onchange="CheckPass()" placeholder="Password"/>
 							</div>
 						</div>
 
 						<!--Retype Password-->
 						<div class="form-group">
 							<div class="input-group">    							
-    							<input class="form-control" type="password" name="password" id="newpwd_retype" value="Abcd1234" onchange="CheckPass()" placeholder="Retype Password"/>
+    							<input class="form-control" type="password" name="password" id="newpwd_retype" value="" onchange="CheckPass()" placeholder="Retype Password"/>
 	  						</div>	  						
 						</div>
 						<i>For password use 8 characters or more, having numbers and letters</i><br />

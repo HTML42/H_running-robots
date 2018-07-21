@@ -51,11 +51,11 @@ set_error_handler("var_dump");
 			break;		
 			case "login":
 			
-				$email="ab123@mail.com";
-				$password="Abcd1234";
+				//$email="ab123@mail.com";
+				//$password="Abcd1234";
 				
-				//$email=$_POST['username'];
-				//$password=$_POST['password'];
+				$email=$_POST['username'];
+				$password=$_POST['password'];
 		
 				$stmt = $link->prepare("select id,password from Login where email=?");
 				$stmt->bind_param('s', $email);
