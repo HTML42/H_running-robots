@@ -22,7 +22,14 @@
   <script src="lib/popper.min.js"></script>
   <script src="lib/bootstrap.min.js"></script-->
   <link rel="stylesheet" href="style/style.css" />
-  
+  <script>
+  	function StartLevel()
+  	{
+  		console.log('hello');
+  		 window.location.assign("Game/game.html")
+  		//window.location.reload="";
+  	}
+  </script>
 </head>
 <body>
 
@@ -56,7 +63,7 @@
    	<div class="col-xs-0 col-sm-1 col-md-3 col-lg-3"></div>
    	<div class="col-xs-12 col-sm-10 col-md-6 col-lg-6">
    		<h6 class="font-huge center main">Levels<br/></h6>
-		<h3 class="font-big center" id="1">Level 1</h3>
+		<h3 class="font-big center" onclick="StartLevel()" id="1">Level 1</h3>
 		<h3 class="font-big center" id="2">Level 2</h3>
 		<h3 class="font-big center" id="3">Level 3</h3>
 		<h3 class="font-big center" id="4">Level 4</h3>
