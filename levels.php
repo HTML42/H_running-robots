@@ -25,9 +25,7 @@
   <script>
   	function StartLevel()
   	{
-  		console.log('hello');
-  		 window.location.assign("Game/game.html")
-  		//window.location.reload="";
+  		 window.location.assign("Game/game.html");
   	}
   </script>
 </head>
